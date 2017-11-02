@@ -2,6 +2,8 @@ package fdi.injection.test.server;
 
 import fdi.injection.test.client.GreetingService;
 import fdi.injection.test.shared.FieldVerifier;
+import fdi.injection.test.shared.SharedObject;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
@@ -41,5 +43,10 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 			return null;
 		}
 		return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+	}
+
+	@Override
+	public SharedObject getExtendSerializedObject() {
+		return new SharedObject();
 	}
 }

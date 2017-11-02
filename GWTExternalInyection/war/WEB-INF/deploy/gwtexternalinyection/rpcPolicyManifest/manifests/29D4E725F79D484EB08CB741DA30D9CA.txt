@@ -1,2 +1,0 @@
-serviceClass: fdi.injection.test.client.GreetingService
-path: 6D705ED39EE7E9B4AB6DA53ABEB3B4D2.gwt.rpc

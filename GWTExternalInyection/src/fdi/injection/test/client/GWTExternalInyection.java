@@ -1,6 +1,7 @@
 package fdi.injection.test.client;
 
 import fdi.injection.test.shared.FieldVerifier;
+import fdi.injection.test.shared.SharedObject;
 
 import com.google.gwt.core.client.Callback;
 import com.google.gwt.core.client.EntryPoint;
@@ -194,6 +195,21 @@ public class GWTExternalInyection implements EntryPoint {
 		});
 	    aqui.add(BB);
 	    
+	    greetingService.getExtendSerializedObject(new AsyncCallback<SharedObject>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onSuccess(SharedObject result) {
+				setVariableBase(result);
+				getVariableBase();
+			}
+		});
+	    
 	}
 
 	public native void alert(String string) /*-{
@@ -202,6 +218,15 @@ public class GWTExternalInyection implements EntryPoint {
 	}-*/;
 	
 	
+	public static native SharedObject getVariableBase() /*-{
+	 console.log( $wnd.DocExpand);
+	  return  $wnd.DocExpand;	  
+	}-*/;
 	
+	
+	public static native void setVariableBase(SharedObject DocumentoExpandido) /*-{
+	   $wnd.DocExpand=DocumentoExpandido;
+	  console.log($wnd.DocExpand);
+	}-*/;
 	
 }

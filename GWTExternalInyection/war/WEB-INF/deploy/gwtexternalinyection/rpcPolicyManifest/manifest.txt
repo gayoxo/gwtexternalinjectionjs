@@ -1,2 +1,3 @@
 # Module gwtexternalinyection
 # RPC service class, partial path of RPC policy file
+fdi.injection.test.client.GreetingService, D1FEC3E7D1A899AB1DD3E3A46452262A.gwt.rpc
