@@ -1,10 +1,10 @@
 package fdi.injection.test.shared;
 
+
 import java.io.Serializable;
 
-import com.google.gwt.user.client.rpc.IsSerializable;
 
-public class SharedObject implements Serializable, IsSerializable {
+public class SharedObject implements Serializable {
 
 	
 	/**

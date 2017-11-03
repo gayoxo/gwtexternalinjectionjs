@@ -5,6 +5,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 import fdi.injection.test.shared.SharedObject;
 
+
 /**
  * The client-side stub for the RPC service.
  */

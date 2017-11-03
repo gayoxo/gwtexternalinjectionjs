@@ -4,6 +4,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import fdi.injection.test.shared.SharedObject;
 
+
 /**
  * The async counterpart of <code>GreetingService</code>.
  */
