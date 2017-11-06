@@ -189,7 +189,7 @@ public class GWTExternalInyection implements EntryPoint {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				alert("Correcto");
+				alert("aqui",1984);
 				
 			}
 		});
@@ -205,28 +205,35 @@ public class GWTExternalInyection implements EntryPoint {
 
 			@Override
 			public void onSuccess(SharedObject result) {
-				setVariableBase(result);
-				getVariableBase();
+				setVariableBase(result,1984);
+				getVariableBase(1984);
 			}
 		});
 	    
 	}
 
-	public native void alert(String string) /*-{
-		window.parent.setData("aqui");
+	public native void alert(String string, int doci) /*-{
+		window.parent.setData([string, doci]);
 		
 	}-*/;
 	
 	
-	public static native SharedObject getVariableBase() /*-{
-	 console.log( $wnd.DocExpand);
-	  return  $wnd.DocExpand;	  
+	public static native SharedObject getVariableBase(int i) /*-{
+	$wnd.daletmp = '$wnd.dale = $wnd.DocExpand'+i;
+	eval($wnd.daletmp)
+	 console.log($wnd.dale);
+	  return  $wnd.dale;	  
 	}-*/;
 	
 	
-	public static native void setVariableBase(SharedObject DocumentoExpandido) /*-{
-	   $wnd.DocExpand=DocumentoExpandido;
-	  console.log($wnd.DocExpand);
+	public static native void setVariableBase(SharedObject DocumentoExpandido, int i) /*-{
+		var tmp=DocumentoExpandido;
+		console.log(tmp);
+		$wnd.dale = '$wnd.DocExpand'+i;
+		$wnd.str = '$wnd.DocExpand'+i +' = DocumentoExpandido_0_g$';
+		console.log($wnd.str);
+		eval($wnd.str)
+	  console.log($wnd.dale);
 	}-*/;
 	
 }
